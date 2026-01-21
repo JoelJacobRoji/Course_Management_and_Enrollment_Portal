@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "name": "HTML Basics",
+    "level": "beginner",
+    "fee": 2000,
+    "duration": "4 Weeks",
+    "instructor": "John Doe",
+    "credits": 2,
+    "description": "Introduction to HTML and web structure.",
+    "facultyBio": "John is a front-end developer with 8 years experience."
+  },
+  {
+    "id": 2,
+    "name": "CSS Fundamentals",
+    "level": "beginner",
+    "fee": 2200,
+    "duration": "4 Weeks",
+    "instructor": "Jane Smith",
+    "credits": 2,
+    "description": "Styling and layout using CSS.",
+    "facultyBio": "Jane specializes in responsive UI design."
+  },
+  {
+    "id": 3,
+    "name": "JavaScript Intro",
+    "level": "beginner",
+    "fee": 2500,
+    "duration": "5 Weeks",
+    "instructor": "Alan Walker",
+    "credits": 3,
+    "description": "Core JavaScript programming concepts.",
+    "facultyBio": "Alan is a JavaScript trainer and consultant."
+  },
+  {
+    "id": 4,
+    "name": "Web Basics",
+    "level": "beginner",
+    "fee": 1800,
+    "duration": "3 Weeks",
+    "instructor": "Emily Clark",
+    "credits": 2,
+    "description": "Fundamentals of web development.",
+    "facultyBio": "Emily teaches web technologies for beginners."
+  },
+
+  {
+    "id": 5,
+    "name": "Angular Intermediate",
+    "level": "medium",
+    "fee": 4500,
+    "duration": "6 Weeks",
+    "instructor": "Robert Brown",
+    "credits": 4,
+    "description": "Component-based Angular development.",
+    "facultyBio": "Robert is an Angular architect."
+  },
+  {
+    "id": 6,
+    "name": "React Intermediate",
+    "level": "medium",
+    "fee": 4700,
+    "duration": "6 Weeks",
+    "instructor": "Lisa Ray",
+    "credits": 4,
+    "description": "Hooks and state management in React.",
+    "facultyBio": "Lisa is a senior React developer."
+  },
+  {
+    "id": 7,
+    "name": "Node.js",
+    "level": "medium",
+    "fee": 4200,
+    "duration": "5 Weeks",
+    "instructor": "Mark Taylor",
+    "credits": 3,
+    "description": "Backend development using Node.js.",
+    "facultyBio": "Mark has 10 years backend experience."
+  },
+  {
+    "id": 8,
+    "name": "REST APIs",
+    "level": "medium",
+    "fee": 4000,
+    "duration": "5 Weeks",
+    "instructor": "Chris Evans",
+    "credits": 3,
+    "description": "Designing RESTful web services.",
+    "facultyBio": "Chris works in API design."
+  },
+
+  {
+    "id": 9,
+    "name": "Advanced Angular",
+    "level": "hard",
+    "fee": 6500,
+    "duration": "8 Weeks",
+    "instructor": "Sophia Lee",
+    "credits": 5,
+    "description": "Advanced Angular patterns and performance.",
+    "facultyBio": "Sophia is an Angular Google Developer Expert."
+  },
+  {
+    "id": 10,
+    "name": "System Design",
+    "level": "hard",
+    "fee": 7000,
+    "duration": "8 Weeks",
+    "instructor": "David Miller",
+    "credits": 5,
+    "description": "Scalable system design concepts.",
+    "facultyBio": "David designs distributed systems."
+  },
+  {
+    "id": 11,
+    "name": "Microservices",
+    "level": "hard",
+    "fee": 6800,
+    "duration": "7 Weeks",
+    "instructor": "Daniel White",
+    "credits": 5,
+    "description": "Microservices architecture.",
+    "facultyBio": "Daniel is a cloud architect."
+  },
+  {
+    "id": 12,
+    "name": "Cloud Architecture",
+    "level": "hard",
+    "fee": 7200,
+    "duration": "8 Weeks",
+    "instructor": "Emma Wilson",
+    "credits": 5,
+    "description": "Cloud-native application design.",
+    "facultyBio": "Emma is a cloud solutions expert."
+  }
+]

@@ -1,0 +1,49 @@
+<h1>Course Enrollments</h1>
+
+<h2>Beginner</h2>
+<mat-grid-list cols="2" rowHeight="250px">
+  <mat-grid-tile *ngFor="let course of beginnerCourses">
+    <mat-card>
+      <h3>{{ course.name }}</h3>
+      <p>Fee: ₹{{ course.fee }}</p>
+      <p>Instructor: {{ course.instructor }}</p>
+      <p>Students Enrolled: {{ getCount(course.id) }}</p>
+
+      <button mat-raised-button color="primary"
+        [routerLink]="['/courses', course.id]">
+        More Details
+      </button>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<h2>Medium</h2>
+<mat-grid-list cols="2" rowHeight="250px">
+  <mat-grid-tile *ngFor="let course of mediumCourses">
+    <mat-card>
+      <h3>{{ course.name }}</h3>
+      <p>Fee: ₹{{ course.fee }}</p>
+      <p>Students Enrolled: {{ getCount(course.id) }}</p>
+
+      <button mat-raised-button color="primary"
+        [routerLink]="['/courses', course.id]">
+        More Details
+      </button>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<h2>Hard</h2>
+<mat-grid-list cols="2" rowHeight="250px">
+  <mat-grid-tile *ngFor="let course of hardCourses">
+    <mat-card>
+      <h3>{{ course.name }}</h3>
+      <p>Students Enrolled: {{ getCount(course.id) }}</p>
+
+      <button mat-raised-button color="primary"
+        [routerLink]="['/courses', course.id]">
+        More Details
+      </button>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

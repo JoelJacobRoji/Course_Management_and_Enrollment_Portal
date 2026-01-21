@@ -1,0 +1,14 @@
+<mat-card *ngIf="course">
+  <h2>{{ course.name }}</h2>
+  <p>{{ course.description }}</p>
+
+  <button mat-raised-button color="primary"
+    (click)="enroll()"
+    [disabled]="isEnrolled()">
+    {{ isEnrolled() ? 'Already Enrolled' : 'Enroll' }}
+  </button>
+
+  <button mat-button routerLink="/courses">
+    Back
+  </button>
+</mat-card>
