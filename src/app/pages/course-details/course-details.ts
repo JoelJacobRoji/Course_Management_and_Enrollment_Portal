@@ -1,49 +1,50 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
+import { CourseService } from '../../services/course.service';
 import { EnrollmentService } from '../../services/enrollment';
+import { NavbarComponent } from "../../shared/navbar/navbar";
 
 @Component({
   selector: 'app-course-details',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatCardModule,
-    MatButtonModule
-  ],
-  templateUrl: './course-details.html'
+  imports: [CommonModule, NavbarComponent],
+  templateUrl: './course-details.html',
+  styleUrls: ['./course-details.css']
 })
-export class CourseDetailsComponent {
+export class CourseDetailsComponent implements OnInit {
 
   course: any;
-
-  allCourses = [
-    { id: 1, name: 'HTML Basics', description: 'HTML fundamentals' },
-    { id: 2, name: 'CSS Basics', description: 'CSS styling' },
-    { id: 3, name: 'JavaScript', description: 'JS programming' },
-    { id: 4, name: 'Angular', description: 'Angular framework' },
-    { id: 5, name: 'System Design', description: 'Design systems' },
-    { id: 6, name: 'Cloud Architecture', description: 'Cloud concepts' }
-  ];
+  isEnrolled = false;
 
   constructor(
     private route: ActivatedRoute,
-    private enrollment: EnrollmentService
-  ) {
+    private courseService: CourseService,
+    private enrollmentService: EnrollmentService
+  ) {}
+
+  ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.course = this.allCourses.find(c => c.id === id);
+
+    this.courseService.getCourses().subscribe(courses => {
+      this.course = courses.find(c => c.id === id);
+      this.isEnrolled = false;
+    });
   }
 
   enroll() {
-  this.enrollment.enroll(this.course.id);
-  alert('Enrolled successfully');
+  this.enrollmentService.enroll(this.course);
+  this.isEnrolled = true;
+  alert('You have successfully enrolled in this course');
+}
+
+unenroll() {
+  const confirmUnenroll = confirm('You have unenrolled. Do you confirm?');
+  if (confirmUnenroll) {
+    this.enrollmentService.unenroll(this.course.id);
+    this.isEnrolled = false;
+  }
 }
 
 
-  isEnrolled() {
-    return this.enrollment.isEnrolled(this.course.id);
-  }
 }

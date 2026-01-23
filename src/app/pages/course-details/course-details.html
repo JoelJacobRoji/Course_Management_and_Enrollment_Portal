@@ -1,14 +1,50 @@
-<mat-card *ngIf="course">
-  <h2>{{ course.name }}</h2>
-  <p>{{ course.description }}</p>
+<app-navbar></app-navbar>
 
-  <button mat-raised-button color="primary"
-    (click)="enroll()"
-    [disabled]="isEnrolled()">
-    {{ isEnrolled() ? 'Already Enrolled' : 'Enroll' }}
-  </button>
+<div class="details-page" *ngIf="course">
 
-  <button mat-button routerLink="/courses">
-    Back
-  </button>
-</mat-card>
+  <div class="details-card">
+
+  
+
+    <!-- BASIC DETAILS -->
+    <h1>{{ course.name }}</h1> <br>
+
+    <div class="info-row">
+      <p>💰 <b>Fee:</b> ₹{{ course.fee }}</p>
+      <p>🎓 <b>Credits:</b> {{ course.credits }}</p>
+      <p>👨‍🏫 <b>Instructor:</b> {{ course.instructor }}</p>
+    </div>
+
+    <!-- LEARN + SYLLABUS -->
+    <div class="two-column">
+
+      <div class="column-box">
+        <h3>📝 What You Will Gain </h3> <br>
+        <ul>
+          <li *ngFor="let item of course.learn">✔ {{ item }}</li>
+        </ul>
+      </div>
+
+      <div class="column-box">
+        <h3>📚 Syllabus</h3> <br>
+        <ul>
+          <li *ngFor="let topic of course.syllabus">📌 {{ topic }}</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- TRAINER -->
+    <div class="trainer-box">
+      <h3>👤 About the Trainer </h3><br>
+      <p>{{ course.trainerBio }}</p>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="action-box">
+      <button *ngIf="!isEnrolled" (click)="enroll()">✅ Enroll Now </button>
+      <button *ngIf="isEnrolled" class="danger" (click)="unenroll()">❌ Unenroll</button>
+    </div>
+
+  </div>
+</div>

@@ -2,5 +2,8 @@ export interface Student {
   id: number;
   name: string;
   email: string;
-  enrolledCourseIds: number[];
+  phone: string;
+  class: string;
+  department: string;
+  regNo: string;
 }

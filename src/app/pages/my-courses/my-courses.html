@@ -1,10 +1,42 @@
-<h1>My Courses</h1>
+<!-- NAVBAR -->
+<app-navbar></app-navbar>
 
-<div *ngFor="let course of myCourses()">
-  <h3>{{ course.name }}</h3>
-  <button (click)="unenroll(course.id)">Unenroll</button>
+<!-- PROFILE PAGE -->
+<div class="profile-page">
+
+  <!-- LEFT: PROFILE DETAILS -->
+  <div class="profile-card">
+    <h2>👤 My Profile</h2>
+
+    <p><strong>Name:</strong> {{ student?.name }}</p>
+    <p><strong>Email:</strong> {{ student?.email }}</p>
+    <p><strong>Phone:</strong> {{ student?.phone }}</p>
+    <p><strong>Department:</strong> {{ student?.department }}</p>
+    <p><strong>Class:</strong> {{ student?.class }}</p>
+    <p><strong>Registration No:</strong> {{ student?.registrationNo }}</p>
+  </div>
+
+  <!-- RIGHT: ENROLLED COURSES -->
+  <div class="courses-card">
+    <h2>📚 Enrolled Courses</h2>
+
+    <p *ngIf="enrolledCourses.length === 0">
+      You have not enrolled in any courses yet.
+    </p>
+
+    <div
+      class="enrolled-course"
+      *ngFor="let course of enrolledCourses"
+    >
+      <div>
+        <h2>{{ course.name }}</h2>
+        <h3>👨‍🏫 {{ course.instructor }}</h3>
+      </div>
+
+      <button class="danger" (click)="unenroll(course.id)">
+        ❌ Unenroll
+      </button>
+    </div>
+  </div>
+
 </div>
-
-<p *ngIf="myCourses().length === 0">
-  You have not enrolled in any courses.
-</p>

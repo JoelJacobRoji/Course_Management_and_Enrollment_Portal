@@ -1,43 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Student } from '../models/student';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class StudentService {
 
-  private studentsKey = 'students';
-  private activeStudentKey = 'activeStudent';
+  private STORAGE_KEY = 'student_profile';
 
-  register(student: Student): void {
-    const students: Student[] =
-      JSON.parse(localStorage.getItem(this.studentsKey) || '[]');
-
-    students.push(student);
-
-    localStorage.setItem(this.studentsKey, JSON.stringify(students));
-    localStorage.setItem(this.activeStudentKey, JSON.stringify(student));
+  saveStudent(student: any) {
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(student));
   }
 
-  getCurrentStudent(): Student | null {
-    return JSON.parse(localStorage.getItem(this.activeStudentKey) || 'null');
+  getStudent() {
+    const data = localStorage.getItem(this.STORAGE_KEY);
+    return data ? JSON.parse(data) : null;
   }
 
-  getActiveStudentId(): number {
-    const student = this.getCurrentStudent();
-    if (!student) {
-      throw new Error('No active student');
-    }
-    return student.id;
+  clearStudent() {
+    localStorage.removeItem(this.STORAGE_KEY);
   }
-
-  isRegistered(): boolean {
-    return !!localStorage.getItem(this.activeStudentKey);
-  }
-
-  logout(): void {
-  localStorage.removeItem('activeStudent');
-  
-}
-
 }

@@ -1,30 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterModule, Router } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { StudentService } from './services/student.service';
+import { RouterOutlet, Router } from '@angular/router';
+import { NavbarComponent } from './shared/navbar/navbar';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    RouterModule,
-    MatToolbarModule,
-    MatButtonModule
-  ],
-  templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  imports: [CommonModule, RouterOutlet, NavbarComponent],
+  templateUrl: './app.html'
 })
 export class AppComponent {
-
-  constructor(
-    private studentService: StudentService,
-    private router: Router
-  ) {}
-
-  logout(): void {
-    this.studentService.logout();
-    this.router.navigate(['/register']);
-  }
+  constructor(public router: Router) {}
 }

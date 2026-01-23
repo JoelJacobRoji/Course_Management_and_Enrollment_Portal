@@ -1,58 +1,33 @@
 import { Injectable } from '@angular/core';
-import { StudentService } from './student.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class EnrollmentService {
 
-  private key = 'enrollments';
+  private STORAGE_KEY = 'enrolled_courses';
 
-  constructor(private studentService: StudentService) {}
-
-  private getData(): Record<number, number[]> {
-    return JSON.parse(localStorage.getItem(this.key) || '{}');
+  getEnrolledCourses(): any[] {
+    const data = localStorage.getItem(this.STORAGE_KEY);
+    return data ? JSON.parse(data) : [];
   }
 
-  private save(data: Record<number, number[]>): void {
-    localStorage.setItem(this.key, JSON.stringify(data));
-  }
+  enroll(course: any) {
+    const courses = this.getEnrolledCourses();
 
-  enroll(courseId: number): void {
-    const studentId = this.studentService.getActiveStudentId();
-    const data = this.getData();
-
-    data[studentId] = data[studentId] || [];
-
-    if (!data[studentId].includes(courseId)) {
-      data[studentId].push(courseId);
-      this.save(data);
+    if (!courses.find(c => c.id === course.id)) {
+      courses.push(course);
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(courses));
     }
   }
 
-  unenroll(courseId: number): void {
-    const studentId = this.studentService.getActiveStudentId();
-    const data = this.getData();
+  unenroll(courseId: number) {
+    const courses = this.getEnrolledCourses()
+      .filter(c => c.id !== courseId);
 
-    data[studentId] = (data[studentId] || [])
-      .filter(id => id !== courseId);
-
-    this.save(data);
-  }
-
-  getMyCourses(): number[] {
-    const studentId = this.studentService.getActiveStudentId();
-    return this.getData()[studentId] || [];
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(courses));
   }
 
   isEnrolled(courseId: number): boolean {
-    return this.getMyCourses().includes(courseId);
-  }
-
-  getEnrollmentCount(courseId: number): number {
-    const data = this.getData();
-    return Object.values(data)
-      .filter(courses => courses.includes(courseId))
-      .length;
+    return this.getEnrolledCourses()
+      .some(c => c.id === courseId);
   }
 }

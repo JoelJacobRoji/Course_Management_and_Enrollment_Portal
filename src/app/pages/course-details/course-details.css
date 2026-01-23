@@ -1,13 +1,70 @@
-.details-container {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #1976d2, #64b5f6);
+.details-page {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 30px;
+  padding: 50px;
 }
 
 .details-card {
-  max-width: 700px;
+  width: 900px;
+  background: #fff;
   padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.course-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.info-row {
+  display: flex;
+  gap: 50px;
+  margin: 15px 0;
+}
+
+.two-column {
+  display: flex;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.column-box {
+  flex: 1;
+  background: #f7f9fc;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.column-box ul {
+  padding-left: 18px;
+}
+
+.trainer-box {
+  margin-top: 25px;
+  background: #eef3ff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.action-box {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.action-box button {
+  padding: 10px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #0d6efd;
+  color: white;
+  cursor: pointer;
+}
+
+.action-box .danger {
+  background: #dc3545;
 }

@@ -2,135 +2,288 @@
   {
     "id": 1,
     "name": "HTML Basics",
-    "level": "beginner",
-    "fee": 2000,
-    "duration": "4 Weeks",
-    "instructor": "John Doe",
+    "level": "Beginner",
+    "fee": 1000,
     "credits": 2,
-    "description": "Introduction to HTML and web structure.",
-    "facultyBio": "John is a front-end developer with 8 years experience."
+    "instructor": "Mr. Ravi",
+    "image": "data/images/courses/HTML basics.png",
+    "description": "Learn the foundation of web development using HTML.",
+    "learn": [
+      "HTML structure and elements",
+      "Forms and input handling",
+      "Semantic HTML",
+      "Basic page layouts"
+    ],
+    "syllabus": [
+      "Introduction to HTML",
+      "Text and Media Tags",
+      "Forms and Tables",
+      "Mini Website Project"
+    ],
+    "trainerBio": "Mr. Ravi has over 10 years of experience in frontend development and has trained thousands of students. His teaching style focuses on strong fundamentals and hands-on practice."
   },
+
   {
     "id": 2,
     "name": "CSS Fundamentals",
-    "level": "beginner",
-    "fee": 2200,
-    "duration": "4 Weeks",
-    "instructor": "Jane Smith",
+    "level": "Beginner",
+    "fee": 1200,
     "credits": 2,
-    "description": "Styling and layout using CSS.",
-    "facultyBio": "Jane specializes in responsive UI design."
+    "instructor": "Ms. Ananya",
+    "image": "data/images/courses/CSS fundamentals.png",
+    "description": "Style beautiful websites using CSS.",
+    "learn": [
+      "CSS selectors and properties",
+      "Box model and layouts",
+      "Flexbox basics",
+      "Responsive design"
+    ],
+    "syllabus": [
+      "CSS Basics",
+      "Colors and Fonts",
+      "Flexbox",
+      "Responsive Design"
+    ],
+    "trainerBio": "Ms. Ananya is a UI specialist with extensive industry exposure. She emphasizes clean design, responsiveness, and real-world styling techniques."
   },
+
   {
     "id": 3,
     "name": "JavaScript Intro",
-    "level": "beginner",
-    "fee": 2500,
-    "duration": "5 Weeks",
-    "instructor": "Alan Walker",
+    "level": "Beginner",
+    "fee": 1500,
     "credits": 3,
-    "description": "Core JavaScript programming concepts.",
-    "facultyBio": "Alan is a JavaScript trainer and consultant."
+    "instructor": "Mr. Karthik",
+    "image": "data/images/courses/JS Intro.png",
+    "description": "Programming fundamentals using JavaScript.",
+    "learn": [
+      "Variables and data types",
+      "Functions and loops",
+      "DOM manipulation",
+      "Basic problem solving"
+    ],
+    "syllabus": [
+      "JavaScript Basics",
+      "Functions",
+      "DOM",
+      "Mini Projects"
+    ],
+    "trainerBio": "Mr. Karthik has strong expertise in JavaScript and logic building. He focuses on clarity, debugging skills, and confidence in coding."
   },
+
   {
     "id": 4,
     "name": "Web Basics",
-    "level": "beginner",
-    "fee": 1800,
-    "duration": "3 Weeks",
-    "instructor": "Emily Clark",
+    "level": "Beginner",
+    "fee": 900,
     "credits": 2,
-    "description": "Fundamentals of web development.",
-    "facultyBio": "Emily teaches web technologies for beginners."
+    "instructor": "Ms. Priya",
+    "image": "data/images/courses/web basics.png",
+    "description": "Basics of how the web works.",
+    "learn": [
+      "How the internet works",
+      "Client-server architecture",
+      "Browsers and protocols",
+      "Basic hosting concepts"
+    ],
+    "syllabus": [
+      "Internet Fundamentals",
+      "HTTP & HTTPS",
+      "Web Hosting",
+      "DNS Basics"
+    ],
+    "trainerBio": "Ms. Priya has a strong academic and industry background in web technologies and explains complex concepts in a very simple manner."
   },
 
   {
     "id": 5,
-    "name": "Angular Intermediate",
-    "level": "medium",
-    "fee": 4500,
-    "duration": "6 Weeks",
-    "instructor": "Robert Brown",
+    "name": "Angular",
+    "level": "Medium",
+    "fee": 3000,
     "credits": 4,
-    "description": "Component-based Angular development.",
-    "facultyBio": "Robert is an Angular architect."
+    "instructor": "Mr. Ajay",
+    "image": "data/images/courses/Angular.png",
+    "description": "Frontend framework using Angular.",
+    "learn": [
+      "Components and modules",
+      "Routing and services",
+      "Data binding",
+      "Forms and validation"
+    ],
+    "syllabus": [
+      "Angular Basics",
+      "Components",
+      "Routing",
+      "Services"
+    ],
+    "trainerBio": "Mr. Ajay is an Angular expert who has worked on multiple enterprise projects. His sessions focus on real-world application architecture."
   },
+
   {
     "id": 6,
-    "name": "React Intermediate",
-    "level": "medium",
-    "fee": 4700,
-    "duration": "6 Weeks",
-    "instructor": "Lisa Ray",
+    "name": "React",
+    "level": "Medium",
+    "fee": 2800,
     "credits": 4,
-    "description": "Hooks and state management in React.",
-    "facultyBio": "Lisa is a senior React developer."
+    "instructor": "Ms. Neha",
+    "image": "data/images/courses/React.png",
+    "description": "Build UI using React.",
+    "learn": [
+      "JSX and components",
+      "Props and state",
+      "Hooks",
+      "Component lifecycle"
+    ],
+    "syllabus": [
+      "React Basics",
+      "Hooks",
+      "State Management",
+      "Mini App"
+    ],
+    "trainerBio": "Ms. Neha specializes in React and frontend performance optimization. She focuses on clean, maintainable UI development."
   },
+
   {
     "id": 7,
     "name": "Node.js",
-    "level": "medium",
-    "fee": 4200,
-    "duration": "5 Weeks",
-    "instructor": "Mark Taylor",
-    "credits": 3,
-    "description": "Backend development using Node.js.",
-    "facultyBio": "Mark has 10 years backend experience."
+    "level": "Medium",
+    "fee": 2600,
+    "credits": 4,
+    "instructor": "Mr. Vinod",
+    "image": "data/images/courses/node.png",
+    "description": "Backend development using Node.",
+    "learn": [
+      "Node runtime basics",
+      "Express framework",
+      "REST APIs",
+      "Middleware"
+    ],
+    "syllabus": [
+      "Node Basics",
+      "Express",
+      "APIs",
+      "Backend Project"
+    ],
+    "trainerBio": "Mr. Vinod has strong backend experience and has built scalable Node.js applications used in production environments."
   },
+
   {
     "id": 8,
-    "name": "REST APIs",
-    "level": "medium",
-    "fee": 4000,
-    "duration": "5 Weeks",
-    "instructor": "Chris Evans",
+    "name": "REST API",
+    "level": "Medium",
+    "fee": 2200,
     "credits": 3,
-    "description": "Designing RESTful web services.",
-    "facultyBio": "Chris works in API design."
+    "instructor": "Ms. Kavya",
+    "image": "data/images/courses/Rest API.png",
+    "description": "API development using REST.",
+    "learn": [
+      "REST principles",
+      "HTTP methods",
+      "Status codes",
+      "API testing"
+    ],
+    "syllabus": [
+      "REST Basics",
+      "CRUD Operations",
+      "API Security",
+      "Postman"
+    ],
+    "trainerBio": "Ms. Kavya focuses on API design and best practices, helping students build clean and secure backend services."
   },
 
   {
     "id": 9,
-    "name": "Advanced Angular",
-    "level": "hard",
-    "fee": 6500,
-    "duration": "8 Weeks",
-    "instructor": "Sophia Lee",
+    "name": "System Design",
+    "level": "Hard",
+    "fee": 5000,
     "credits": 5,
-    "description": "Advanced Angular patterns and performance.",
-    "facultyBio": "Sophia is an Angular Google Developer Expert."
+    "instructor": "Mr. Suresh",
+    "image": "data/images/courses/System Design.png",
+    "description": "Design scalable systems.",
+    "learn": [
+      "Scalability concepts",
+      "Load balancing",
+      "Database design",
+      "System architecture"
+    ],
+    "syllabus": [
+      "Design Basics",
+      "Scalability",
+      "Databases",
+      "Case Studies"
+    ],
+    "trainerBio": "Mr. Suresh has worked on large-scale distributed systems and brings deep industry insights into system design."
   },
+
   {
     "id": 10,
-    "name": "System Design",
-    "level": "hard",
-    "fee": 7000,
-    "duration": "8 Weeks",
-    "instructor": "David Miller",
+    "name": "Microservices",
+    "level": "Hard",
+    "fee": 4800,
     "credits": 5,
-    "description": "Scalable system design concepts.",
-    "facultyBio": "David designs distributed systems."
+    "instructor": "Ms. Deepa",
+    "image": "data/images/courses/Micro services.png",
+    "description": "Microservices architecture.",
+    "learn": [
+      "Microservices concepts",
+      "Service communication",
+      "Docker basics",
+      "Deployment strategies"
+    ],
+    "syllabus": [
+      "Monolith vs Microservices",
+      "Service Design",
+      "Containers",
+      "Deployment"
+    ],
+    "trainerBio": "Ms. Deepa has hands-on experience building microservices-based enterprise systems and focuses on real-world patterns."
   },
+
   {
     "id": 11,
-    "name": "Microservices",
-    "level": "hard",
-    "fee": 6800,
-    "duration": "7 Weeks",
-    "instructor": "Daniel White",
+    "name": "Cloud Architecture",
+    "level": "Hard",
+    "fee": 5200,
     "credits": 5,
-    "description": "Microservices architecture.",
-    "facultyBio": "Daniel is a cloud architect."
+    "instructor": "Mr. Ramesh",
+    "image": "data/images/courses/Cloud Architecture.png",
+    "description": "Cloud design patterns.",
+    "learn": [
+      "Cloud fundamentals",
+      "Scalable architectures",
+      "Security basics",
+      "Cost optimization"
+    ],
+    "syllabus": [
+      "Cloud Basics",
+      "Architecture Patterns",
+      "Security",
+      "Monitoring"
+    ],
+    "trainerBio": "Mr. Ramesh is a cloud architect with experience across AWS and Azure, focusing on scalable and secure solutions."
   },
+
   {
     "id": 12,
-    "name": "Cloud Architecture",
-    "level": "hard",
-    "fee": 7200,
-    "duration": "8 Weeks",
-    "instructor": "Emma Wilson",
+    "name": "Advanced Angular",
+    "level": "Hard",
+    "fee": 4500,
     "credits": 5,
-    "description": "Cloud-native application design.",
-    "facultyBio": "Emma is a cloud solutions expert."
+    "instructor": "Ms. Aditi",
+    "image": "data/images/courses/Advanced Angular.png",
+    "description": "Advanced Angular concepts.",
+    "learn": [
+      "Advanced routing",
+      "State management",
+      "Performance optimization",
+      "Best practices"
+    ],
+    "syllabus": [
+      "Advanced Components",
+      "NgRx",
+      "Optimization",
+      "Enterprise Patterns"
+    ],
+    "trainerBio": "Ms. Aditi is an Angular specialist with deep expertise in enterprise-grade Angular applications and performance tuning."
   }
 ]

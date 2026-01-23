@@ -1,43 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatGridListModule } from '@angular/material/grid-list';
-
 import { CourseService } from '../../services/course.service';
 import { Course } from '../../models/course';
+import { NavbarComponent } from "../../shared/navbar/navbar";
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatCardModule,
-    MatButtonModule,
-    MatGridListModule
-  ],
+  imports: [CommonModule, RouterModule, NavbarComponent],
   templateUrl: './courses.html',
   styleUrls: ['./courses.css']
 })
-export class CoursesComponent {
+export class CoursesComponent implements OnInit {
 
   beginnerCourses: Course[] = [];
   mediumCourses: Course[] = [];
   hardCourses: Course[] = [];
 
-  constructor(private courseService: CourseService) {
-    this.courseService.getCourses().subscribe(courses => {
-      this.beginnerCourses = courses.filter(c => c.level === 'beginner');
-      this.mediumCourses = courses.filter(c => c.level === 'medium');
-      this.hardCourses = courses.filter(c => c.level === 'hard');
-      console.log('CoursesComponent loaded');
-    });
-  }
+  constructor(private courseService: CourseService) {}
 
-  getCount(courseId: number): number {
-    return this.courseService.getEnrollmentCount(courseId);
+  ngOnInit(): void {
+    this.courseService.getCourses().subscribe(courses => {
+      this.beginnerCourses = courses.filter(c => c.level === 'Beginner');
+      this.mediumCourses = courses.filter(c => c.level === 'Medium');
+      this.hardCourses = courses.filter(c => c.level === 'Hard');
+    });
   }
 }

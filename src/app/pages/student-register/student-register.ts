@@ -1,55 +1,39 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import {
-  ReactiveFormsModule,
-  FormBuilder,
-  Validators,
-  FormGroup
-} from '@angular/forms';
-
-import { Router, RouterModule } from '@angular/router';
+import { FormsModule, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { StudentService } from '../../services/student.service';
-import { Student } from '../../models/student';
 
 @Component({
   selector: 'app-student-register',
   standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    RouterModule
-  ],
+  imports: [CommonModule, FormsModule],
   templateUrl: './student-register.html',
   styleUrls: ['./student-register.css']
 })
 export class StudentRegisterComponent {
 
-  studentForm!: FormGroup;   // declared, not initialized here
+  student = {
+    name: '',
+    email: '',
+    phone: '',
+    department: '',
+    class: '',
+    registrationNo: ''
+  };
 
   constructor(
-    private fb: FormBuilder,
     private studentService: StudentService,
     private router: Router
-  ) {
-    // ✅ SAFE PLACE to use fb
-    this.studentForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]]
-    });
-  }
+  ) {}
 
-  submit(): void {
-    if (this.studentForm.invalid) return;
+  submit(form: NgForm) {
+    if (form.invalid) return;
 
-    const student: Student = {
-      id: Date.now(),
-      name: this.studentForm.value.name!,
-      email: this.studentForm.value.email!,
-      enrolledCourseIds: []
-    };
+    // 🔐 SAVE PERMANENTLY
+    this.studentService.saveStudent(this.student);
 
-    this.studentService.register(student);
+    // ➡️ GO TO COURSES
     this.router.navigate(['/courses']);
   }
 }

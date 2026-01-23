@@ -1,0 +1,71 @@
+.profile-page {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+/* LEFT PROFILE CARD */
+.profile-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.profile-card h2 {
+  margin-bottom: 20px;
+  color: #1e88e5;
+}
+
+.profile-card p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+/* RIGHT COURSES CARD */
+.courses-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.courses-card h2 {
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+/* ENROLLED COURSE ITEM */
+.enrolled-course {
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.enrolled-course h4 {
+  margin: 0;
+}
+
+.enrolled-course p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* UNENROLL */
+button.danger {
+  background-color: #e53935;
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.danger:hover {
+  background-color: #c62828;
+}

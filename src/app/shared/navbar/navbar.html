@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="nav-left">
+    🎓 Student Course Management System
+  </div>
+
+  <div class="nav-right">
+    <!-- THESE MUST BE routerLink -->
+    <a routerLink="/courses" routerLinkActive="active">Courses</a>
+    <a routerLink="/my-courses" routerLinkActive="active">My Profile</a>
+
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+</nav>

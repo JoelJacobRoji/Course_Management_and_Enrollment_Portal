@@ -1,33 +1,32 @@
 import { Routes } from '@angular/router';
-import { CoursesComponent } from './pages/courses/courses';
-import { MyCoursesComponent } from './pages/my-courses/my-courses';
 import { StudentRegisterComponent } from './pages/student-register/student-register';
-import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'register', pathMatch: 'full' },
-
-  { path: 'register', component: StudentRegisterComponent },
 
   {
-    path: 'courses',
-    component: CoursesComponent,
-    canActivate: [authGuard]
+    path: '',
+    component: StudentRegisterComponent
   },
 
   {
-    path: 'courses/:id',
+    path: 'courses',
+    loadComponent: () =>
+      import('./pages/courses/courses')
+        .then(m => m.CoursesComponent)
+  },
+
+  {
+    path: 'course-details/:id',
     loadComponent: () =>
       import('./pages/course-details/course-details')
-        .then(m => m.CourseDetailsComponent),
-    canActivate: [authGuard]
+        .then(m => m.CourseDetailsComponent)
   },
 
   {
     path: 'my-courses',
-    component: MyCoursesComponent,
-    canActivate: [authGuard]
-  },
+    loadComponent: () =>
+      import('./pages/my-courses/my-courses')
+        .then(m => m.MyCoursesComponent)
+  }
 
-  { path: '**', redirectTo: 'register' }
 ];

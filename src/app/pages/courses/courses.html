@@ -1,49 +1,136 @@
-<h1>Course Enrollments</h1>
+<app-navbar></app-navbar>
 
-<h2>Beginner</h2>
-<mat-grid-list cols="2" rowHeight="250px">
-  <mat-grid-tile *ngFor="let course of beginnerCourses">
-    <mat-card>
-      <h3>{{ course.name }}</h3>
-      <p>Fee: ₹{{ course.fee }}</p>
-      <p>Instructor: {{ course.instructor }}</p>
-      <p>Students Enrolled: {{ getCount(course.id) }}</p>
+<div class="courses-page">
 
-      <button mat-raised-button color="primary"
-        [routerLink]="['/courses', course.id]">
-        More Details
-      </button>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+  <h2 class="page-title">📘 Courses Available</h2>
 
-<h2>Medium</h2>
-<mat-grid-list cols="2" rowHeight="250px">
-  <mat-grid-tile *ngFor="let course of mediumCourses">
-    <mat-card>
-      <h3>{{ course.name }}</h3>
-      <p>Fee: ₹{{ course.fee }}</p>
-      <p>Students Enrolled: {{ getCount(course.id) }}</p>
+  <!-- ================= BEGINNER ================= -->
+  <h3 class="level-title">🟢 Beginner Courses</h3>
 
-      <button mat-raised-button color="primary"
-        [routerLink]="['/courses', course.id]">
-        More Details
-      </button>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+  <div class="course-grid">
 
-<h2>Hard</h2>
-<mat-grid-list cols="2" rowHeight="250px">
-  <mat-grid-tile *ngFor="let course of hardCourses">
-    <mat-card>
-      <h3>{{ course.name }}</h3>
-      <p>Students Enrolled: {{ getCount(course.id) }}</p>
+    <div class="course-card">
+      <img src="assets/data/images/courses/HTML basics.png" alt="HTML Basics">
+      <h4>HTML Basics</h4>
+      <p>💰 Fee: ₹1000</p>
+      <p>🎓 Credits: 2</p>
+      <p>👨‍🏫 Instructor: Mr. Ravi</p>
+      <button routerLink="/course-details/1">More Details</button>
+    </div>
 
-      <button mat-raised-button color="primary"
-        [routerLink]="['/courses', course.id]">
-        More Details
-      </button>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+    <div class="course-card">
+      <img src="assets/data/images/courses/CSS fundamentals.png" alt="CSS Fundamentals">
+      <h4>CSS Fundamentals</h4>
+      <p>💰 Fee: ₹1200</p>
+      <p>🎓 Credits: 2</p>
+      <p>👩‍🏫 Instructor: Ms. Ananya</p>
+      <button routerLink="/course-details/2">More Details</button>
+    </div>
+
+    <div class="course-card">
+      <img src="assets/data/images/courses/JS Intro.png" alt="JavaScript Intro">
+      <h4>JavaScript Intro</h4>
+      <p>💰 Fee: ₹1500</p>
+      <p>🎓 Credits: 3</p>
+      <p>👨‍🏫 Instructor: Mr. Karthik</p>
+      <button routerLink="/course-details/3">More Details</button>
+    </div>
+
+    <div class="course-card">
+      <img src="assets/data/images/courses/web basics.png" alt="web basics">
+      <h4>Web Basics</h4>
+      <p>💰 Fee: ₹900</p>
+      <p>🎓 Credits: 2</p>
+      <p>👩‍🏫 Instructor: Ms. Neha</p>
+      <button routerLink="/course-details/4">More Details</button>
+    </div>
+
+  </div>
+
+  <!-- ================= MEDIUM ================= -->
+  <h3 class="level-title">🟡 Medium Courses</h3>
+
+  <div class="course-grid">
+
+    <div class="course-card">
+      <img src="assets/data/images/courses/Angular.png" alt="Angular">
+      <h4>Angular</h4>
+      <p>💰 Fee: ₹2500</p>
+      <p>🎓 Credits: 4</p>
+      <p>👨‍🏫 Instructor: Mr. Suresh</p>
+      <button routerLink="/course-details/5">More Details</button>
+    </div>
+
+    <div class="course-card">
+      <img src="assets/data/images/courses/React.png" alt="React">
+      <h4>React</h4>
+      <p>💰 Fee: ₹2400</p>
+      <p>🎓 Credits: 4</p>
+      <p>👩‍🏫 Instructor: Ms. Priya</p>
+      <button routerLink="/course-details/6">More Details</button>
+    </div>
+
+    <div class="course-card">
+      <img src="assets/data/images/courses/node.png" alt="Node JS">
+      <h4>Node.js</h4>
+      <p>💰 Fee: ₹2200</p>
+      <p>🎓 Credits: 4</p>
+      <p>👨‍🏫 Instructor: Mr. Arjun</p>
+      <button routerLink="/course-details/7">More Details</button>
+    </div>
+
+    <div class="course-card">
+      <img src="assets/data/images/courses/Rest API.png" alt="REST API">
+      <h4>REST API</h4>
+      <p>💰 Fee: ₹2000</p>
+      <p>🎓 Credits: 3</p>
+      <p>👩‍🏫 Instructor: Ms. Kavya</p>
+      <button routerLink="/course-details/8">More Details</button>
+    </div>
+
+  </div>
+
+  <!-- ================= HARD ================= -->
+  <h3 class="level-title">🔴 Advanced Courses</h3>
+
+  <div class="course-grid">
+
+    <div class="course-card">
+      <img src="assets/data/images/courses/Advanced Angular.png" alt="Advanced Angular">
+      <h4>Advanced Angular</h4>
+      <p>💰 Fee: ₹3500</p>
+      <p>🎓 Credits: 5</p>
+      <p>👨‍🏫 Instructor: Mr. Vinod</p>
+      <button routerLink="/course-details/9">More Details</button>
+    </div>
+
+    <div class="course-card">
+      <img src="assets/data/images/courses/Micro services.png" alt="Microservices">
+      <h4>Microservices</h4>
+      <p>💰 Fee: ₹3800</p>
+      <p>🎓 Credits: 5</p>
+      <p>👩‍🏫 Instructor: Ms. Ritu</p>
+      <button routerLink="/course-details/10">More Details</button>
+    </div>
+
+    <div class="course-card">
+      <img src="assets/data/images/courses/System Design.png" alt="System Design">
+      <h4>System Design</h4>
+      <p>💰 Fee: ₹4000</p>
+      <p>🎓 Credits: 5</p>
+      <p>👨‍🏫 Instructor: Mr. Deepak</p>
+      <button routerLink="/course-details/11">More Details</button>
+    </div>
+
+    <div class="course-card">
+      <img src="assets/data/images/courses/Cloud Architecture.png" alt="Cloud Architecture">
+      <h4>Cloud Architecture</h4>
+      <p>💰 Fee: ₹4200</p>
+      <p>🎓 Credits: 5</p>
+      <p>👩‍🏫 Instructor: Ms. Sneha</p>
+      <button routerLink="/course-details/12">More Details</button>
+    </div>
+
+  </div>
+
+</div>

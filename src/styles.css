@@ -1,4 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Page container */
+.page-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* Section headings */
+.section-title {
+  margin: 24px 0 12px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+}
