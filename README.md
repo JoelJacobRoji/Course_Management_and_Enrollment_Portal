@@ -1,6 +1,12 @@
-# ScmClean
+# Student Course Management System 
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+
+
+## Live Demo
+ 
+Visit our Official Website [here](https://joeljacobroji.github.io/Course_Management_and_Enrollment_Portal/)
+
 
 ## Development server
 
